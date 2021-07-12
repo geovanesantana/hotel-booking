@@ -17,4 +17,4 @@ $ yarn start
 $ yarn generate
 ```
 
-Check how it's working [test url](https://hotel-booking-geovanesantana.vercel.app/).
+Check how it's working [test url](https://hotel-booking-inky.vercel.app/).
