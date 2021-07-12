@@ -1,0 +1,151 @@
+
+/* Background Image */
+.home {
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 83%;
+	}
+
+	/* Content */
+	&__container {
+		position: relative;
+		height: calc(100vh - 5rem);
+		align-content: center;
+		row-gap: 3rem;
+	}
+
+	&__data-subtitle,
+	&__data-title,
+	&__social-link,
+	&__info {
+		color: $white-color;
+	}
+
+	&__data-subtitle {
+		display: block;
+		font-weight: $font-weight-semi-bold;
+		margin-bottom: $mb-0-75;
+	}
+
+	&__data-title {
+		font-size: $h1-font-size;
+		font-weight: $font-weight-regular;
+		margin-bottom: $mb-2-5;
+	}
+
+	/* Social Medias */
+	&__social {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.5rem;
+	}
+
+	/* Right Card */
+	&__info {
+		background-color: $first-color;
+		display: flex;
+		align-items: center;
+		padding: 1.5rem 1rem;
+		column-gap: 0.5rem;
+		position: absolute;
+		right: 0px;
+		bottom: 4.5rem;
+		width: 228px;
+	}
+
+	&__info-title {
+		display: block;
+		font-size: $small-font-size;
+		font-weight: $font-weight-semi-bold;
+		margin-bottom: $mb-0-75;
+	}
+
+	&__info-button {
+		font-size: $smaller-font-size;
+	}
+
+	&__info-overlay {
+		overflow: $img-hidden;
+	}
+
+	&__info-img {
+		width: 145px;
+		transition: $img-transition;
+	}
+
+	&__info-img:hover {
+		transform: $img-scale;
+	}
+
+	/* Small Screens */
+	@media screen and (max-width: 340px) {
+		&__info {
+			width: 190px;
+			padding: 1rem;
+		}
+	}
+
+	/* Medium Screens */
+	@media screen and (min-width: 768px) {
+		&__container {
+			grid-template-rows: 1.8fr .5fr;
+		}
+
+		&__data {
+			align-self: flex-end;
+		}
+
+		&__social {
+			flex-direction: row;
+			align-self: flex-end;
+			margin-bottom: 3rem;
+			column-gap: 2.2rem;
+		}
+
+		&__info {
+			bottom: 3rem;
+		}
+	}
+
+	/* Large Screens */
+	@media screen and (min-width: 1024px) {
+		margin: 60px auto;
+		position: relative;
+		width: calc(100% - 160px);
+		height: 100%;
+    min-height: 600px;
+
+		&__container {
+			padding: 0 40px;
+			grid-template-rows: 2fr .5fr;
+		}
+
+		&__info {
+			width: 328px;
+			grid-template-columns: 1fr 2fr;
+			column-gap: 2rem;
+			right: 40px;
+		}
+
+		&__info-title {
+			font-size: $normal-font-size;
+		}
+
+		&__info-img {
+			width: 240px;
+		}
+	}
+
+	/* Tall Screens */
+	@media screen and (min-height: 721px) {
+		&__container,
+		&__img {
+			height: 600px;
+		}
+	}
+}

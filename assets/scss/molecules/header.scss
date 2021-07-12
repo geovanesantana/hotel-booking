@@ -1,0 +1,175 @@
+@import '../_base/variables.scss';
+@import '../_base/typography';
+@import '../_base/colors';
+
+.header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: $z-fixed;
+	transition: 0.125s;
+}
+
+/* Nav */
+.nav {
+	height: 4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	&__logo,
+	&__toggle {
+		color: $white-color;
+	}
+
+	&__logo {
+		font-weight: $font-weight-semi-bold;
+	}
+
+	&__toggle {
+		font-size: 1.2rem;
+		cursor: pointer;
+
+		&-icon {
+			filter: brightness(0) invert(1);
+		}
+	}
+
+	&__menu {
+		position: relative;
+	}
+
+	@media screen and (max-width: 767px) {
+		&__menu {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 70%;
+			height: 100%;
+			padding: 3rem;
+			transition: 0.4s;
+
+			@include themed() {
+				background-color: t($body-color);
+				box-shadow: t($box-shadow);
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 2.5rem;
+	}
+
+	&__close {
+		position: absolute;
+		top: 0.75rem;
+		right: 1rem;
+		font-size: 1.5rem;
+		color: $title-color;
+		cursor: pointer;
+	}
+
+	&__menu {
+		z-index: 999;
+	}
+
+	/* Dark Mode */
+	&__dark {
+		display: flex;
+		align-items: center;
+		column-gap: 2rem;
+		position: absolute;
+		left: 3rem;
+		bottom: 4rem;
+	}
+}
+
+/* Show Menu */
+.show-menu {
+	right: 0;
+}
+
+/* Change background */
+.scroll-header {
+	@include themed() {
+		background-color: t($body-color);
+		box-shadow: t($box-shadow);
+	}
+
+	.nav__toggle {
+		&-icon {
+			filter: none;
+		}
+	}
+}
+
+.scroll-header .nav__logo,
+.scroll-header .nav__toggle {
+	@include themed() {
+		color: t($title-color);
+	}
+}
+
+.change-theme,
+.change-theme-name {
+	@include themed() {
+		color: t($text-color);
+	}
+}
+
+.change-theme {
+	cursor: pointer;
+	width: 20px;
+
+	&--light {
+		filter: brightness(0) invert(1);
+	}
+}
+
+.change-theme-name {
+	font-size: $small-font-size;
+}
+
+/* Medium Screens */
+@media screen and (min-width: 768px) {
+	.nav {
+		height: calc(3rem + 1.5rem);
+	}
+
+	.nav__dark {
+		position: initial;
+	}
+
+	.nav__menu {
+		display: flex;
+		column-gap: 1rem;
+	}
+
+	.nav__list {
+		flex-direction: row;
+		column-gap: 4rem;
+		margin-right: 4rem;
+	}
+
+	.nav__toggle,
+	.nav__close,
+	.change-theme-name {
+		display: none;
+	}
+
+	.change-theme {
+		color: $white-color;
+		position: absolute;
+		right: 0.8rem;
+		top: -2px;
+	}
+
+	.scroll-header .change-theme {
+		@include themed() {
+			color: t($text-color);
+		}
+	}
+}

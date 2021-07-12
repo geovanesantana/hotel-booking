@@ -1,0 +1,75 @@
+.card {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: 1fr;
+
+	&__wrapper {
+		width: 100%;
+		border-radius: 5px;
+		max-width: 400px;
+		border: 1px solid;
+
+		@include themed() {
+			border-color: t($border-color);
+		}
+	}
+
+	&__body {
+		padding: 24px 32px;
+	}
+
+	&__overlay {
+		overflow: $img-hidden;
+
+		&:nth-child(1) {
+			width: 100%;
+			margin-right: 2rem;
+		}
+
+		&:nth-child(2) {
+			width: 120px;
+			position: absolute;
+			top: 2rem;
+			right: 0;
+		}
+	}
+
+	&__image {
+		display: block;
+		transition: $img-transition;
+
+		&:hover {
+			transform: $img-scale;
+		}
+	}
+
+	&__title {
+		font-size: $normal-font-size + 0.25;
+		margin-bottom: 8px;
+
+		@include themed() {
+			color: t($title-color);
+		}
+	}
+
+	&__description {
+		font-size: $normal-font-size;
+		line-height: 27.5px;
+		margin-bottom: 16px;
+	}
+
+	&__link {
+		display: inline-flex;
+		font-family: $title-font;
+		font-size: $normal-font-size;
+		color: $first-color;
+	}
+
+	&__icon {
+		margin-left: 5px;
+	}
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}

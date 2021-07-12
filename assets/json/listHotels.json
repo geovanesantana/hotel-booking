@@ -1,0 +1,89 @@
+[
+  {
+		"location": "brazil",
+		"address": "Florianópolis, Brasil",
+		"label": "hotel",
+		"title": "Majestic Palace",
+		"description": "The IBEROSTAR Bahia hotel is a 5-star All Inclusive hotel in Brazil.",
+		"slug": "#",
+		"image_url": "hotel-booking1",
+		"stars": 5,
+		"price": 233
+	},
+	{
+		"location": "brazil",
+		"address": "Mata de são joão, Brasil",
+		"label": "hotel",
+		"title": "Iberostar Bahia",
+		"description": "Fantastically located above the bay overlooking the Gulf of Naples.",
+		"slug": "#",
+		"image_url": "hotel-booking6",
+		"stars": 5,
+		"price": 400
+	},
+	{
+		"location": "italy",
+		"address": "Gulf of Naples, Italy",
+		"label": "hotel",
+		"title": "Grand Hotel Sitea",
+		"description": "Fantastically located above the bay overlooking the Gulf of Naples.",
+		"slug": "#",
+		"image_url": "hotel-booking7",
+		"stars": 5,
+		"price": 120
+	},
+	{
+		"location": "italy",
+		"address": "Milano, Italy",
+		"label": "hotel",
+		"title": "Pierre Milano",
+		"description": "Nestled amidst the idyllic forest on the sunny slopes of the Plose, the exclusive boutique hotel.",
+		"slug": "#",
+		"image_url": "hotel-booking8",
+		"stars": 3,
+		"price": 324
+	},
+	{
+		"location": "portugal",
+		"address": "Porto, Portugal",
+		"label": "hotel",
+		"title": "Vila Foz Hotel & SPA",
+		"description": "20 minutes from the center of Porto, and windows open to the Foz promenade and the Atlantic.",
+		"slug": "#",
+		"image_url": "hotel-booking3",
+		"stars": 5,
+		"price": 656
+	},
+	{
+		"location": "portugal",
+		"address": "Lisbon, Portugal",
+		"title": "Travel Park Lisboa",
+		"description": "This elegant hotel is located in downtown Lisbon, close to Praça da Figueira and São Jorg Castle.",
+		"slug": "#",
+		"image_url": "hotel-booking2",
+		"stars": 5,
+		"price": 878
+	},
+	{
+		"location": "spain",
+		"address": "Canyamel, Spain",
+		"label": "hotel",
+		"title": "Cap Vermell Grand Hotel",
+		"description": "Mallorca offers all imaginable services complemented with the latest technology and facilities.",
+		"slug": "#",
+		"image_url": "hotel-booking4",
+		"stars": 4,
+		"price": 122
+	},
+	{
+		"location": "spain",
+		"address": "Valencia, Spain",
+		"label": "hotel",
+		"title": "Sh Valencia Palace",
+		"description": "Near a beach is the Sh Valencia Palace hotel.",
+		"slug": "#",
+		"image_url": "hotel-booking5",
+		"stars": 5,
+		"price": 80
+	}
+]

@@ -1,0 +1,26 @@
+@font-face {
+	font-family: TUITypeLightRegular;
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url('~assets/fonts/TUITypeLightRegular.woff2') format("woff2"), url('~assets/fonts/TUITypeLightRegular.woff') format("woff"),
+		url('~assets/fonts/TUITypeLightRegular.ttf') format("truetype");
+}
+
+@font-face {
+	font-family: TUITypeLightSemiRegular;
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+	src: url('~assets/fonts/TUITypeLightSemiRegular.woff2') format("woff2"), url('~assets/fonts/TUITypeLightSemiRegular.woff') format("woff"),
+		url('~assets/fonts/TUITypeLightSemiRegular.ttf') format("truetype");
+}
+
+@font-face {
+	font-family: TUITypeLightBold;
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	src: url('~assets/fonts/TUITypeLightBold.woff2') format("woff2"), url('~assets/fonts/TUITypeLightBold.woff') format("woff"),
+		url('~assets/fonts/TUITypeLightBold.ttf') format("truetype");
+}

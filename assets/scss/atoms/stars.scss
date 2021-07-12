@@ -1,0 +1,10 @@
+.stars {
+	margin-right: 4px;
+}
+
+.theme--dark .stars {
+	svg {
+		margin-left: 5px;
+		filter: brightness(0) invert(1);
+	}
+}

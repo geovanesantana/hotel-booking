@@ -1,0 +1,32 @@
+.about__img-overlay {
+	overflow: $img-hidden;
+}
+
+.about__img--small {
+	width: 130px;
+}
+
+.about__img--large {
+	width: 180px;
+}
+
+.about__img--small,
+.about__img--large {
+	transition: $img-transition;
+}
+
+.about__img--small:hover,
+.about__img--large:hover {
+	transform: $img-scale;
+}
+
+/* Large Screens */
+@media screen and (min-width: 1024px) {
+	.about__img--small {
+		width: 240px;
+	}
+
+	.about__img--large {
+		width: 290px;
+	}
+}

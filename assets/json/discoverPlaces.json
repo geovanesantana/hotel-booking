@@ -1,0 +1,122 @@
+{
+  "brazil": [
+		{
+			"location": "brazil",
+			"title": "Majestic Palace",
+			"description": "The IBEROSTAR Bahia hotel is a 5-star All Inclusive hotel in Brazil.",
+			"slug": "#",
+			"image_url": "hotel-booking1"
+		},
+		{
+			"location": "brazil",
+			"title": "Iberostar Bahia",
+			"description": "Fantastically located above the bay overlooking the Gulf of Naples.",
+			"slug": "#",
+			"image_url": "hotel-booking2"
+		},
+		{
+			"location": "brazil",
+			"title": "Majestic Palace",
+			"description": "The IBEROSTAR Bahia hotel is a 5-star All Inclusive hotel in Brazil.",
+			"slug": "#",
+			"image_url": "hotel-booking4"
+		},
+		{
+			"location": "brazil",
+			"title": "Iberostar Bahia",
+			"description": "Fantastically located above the bay overlooking the Gulf of Naples.",
+			"slug": "#",
+			"image_url": "hotel-booking6"
+		}
+	],
+	"italy": [
+		{
+			"location": "italy",
+			"title": "Grand Hotel Sitea",
+			"description": "Fantastically located above the bay overlooking the Gulf of Naples.",
+			"slug": "#",
+			"image_url": "hotel-booking3"
+		},
+		{
+			"location": "italy",
+			"title": "Pierre Milano",
+			"description": "Nestled amidst the idyllic forest on the sunny slopes of the Plose, the exclusive boutique hotel.",
+			"slug": "#",
+			"image_url": "hotel-booking5"
+		},
+		{
+			"location": "italy",
+			"title": "Grand Hotel Sitea",
+			"description": "Fantastically located above the bay overlooking the Gulf of Naples.",
+			"slug": "#",
+			"image_url": "hotel-booking7"
+		},
+		{
+			"location": "italy",
+			"title": "Pierre Milano",
+			"description": "Nestled amidst the idyllic forest on the sunny slopes of the Plose, the exclusive boutique hotel.",
+			"slug": "#",
+			"image_url": "hotel-booking8"
+		}
+	],
+	"portugal": [
+		{
+			"location": "portugal",
+			"title": "Vila Foz Hotel & SPA",
+			"description": "20 minutes from the center of Porto, and windows open to the Foz promenade and the Atlantic.",
+			"slug": "#",
+			"image_url": "hotel-booking8"
+		},
+		{
+			"location": "portugal",
+			"title": "Travel Park Lisboa",
+			"description": "This elegant hotel is located in downtown Lisbon, close to Praça da Figueira and São Jorg Castle.",
+			"slug": "#",
+			"image_url": "hotel-booking6"
+		},
+		{
+			"location": "portugal",
+			"title": "Vila Foz Hotel & SPA",
+			"description": "20 minutes from the center of Porto, and windows open to the Foz promenade and the Atlantic.",
+			"slug": "#",
+			"image_url": "hotel-booking5"
+		},
+		{
+			"location": "portugal",
+			"title": "Travel Park Lisboa",
+			"description": "This elegant hotel is located in downtown Lisbon, close to Praça da Figueira and São Jorg Castle.",
+			"slug": "#",
+			"image_url": "hotel-booking4"
+		}
+	],
+	"spain": [
+		{
+			"location": "spain",
+			"title": "INTERCONTINENTAL SAO PAULO",
+			"description": "InterContinental Sao Paulo is located just one block away from Paulista Avenue in Sao Paulo. ",
+			"slug": "#",
+			"image_url": "hotel-booking2"
+		},
+		{
+			"location": "spain",
+			"title": "INTERCONTINENTAL SAO PAULO",
+			"description": "InterContinental Sao Paulo is located just one block away from Paulista Avenue in Sao Paulo. ",
+			"slug": "#",
+			"image_url": "hotel-booking3"
+		},
+		{
+			"location": "spain",
+			"title": "Cap Vermell Grand Hotel",
+			"description": "Mallorca offers all imaginable services complemented with the latest technology and facilities.",
+			"slug": "#",
+			"image_url": "hotel-booking7"
+		},
+		{
+			"location": "spain",
+			"title": "Cap Vermell Grand Hotel",
+			"description": "Mallorca offers all imaginable services complemented with the latest technology and facilities.",
+			"slug": "#",
+			"image_url": "hotel-booking8"
+		}
+	]
+}

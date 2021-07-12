@@ -1,0 +1,21 @@
+.tabs {
+	&__list {
+    display: flex;
+		margin: 30px 0 40px;
+
+		&>li {
+			a {
+				margin-right: 30px;
+				font-family: $title-font;
+
+				@include themed() {
+					color: t($title-color);
+				}
+			}
+		}
+
+		.is-active a {
+			border-bottom: 3px solid $first-color;
+		}
+	}
+}

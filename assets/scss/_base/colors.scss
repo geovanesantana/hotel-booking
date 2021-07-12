@@ -1,0 +1,87 @@
+/* Text */
+$first-color: #0076B5;
+$first-color-alt: #048DCC;
+$text-color-light: #F2F9FF;
+$title-color--light: #092A5E;
+$text-color--light: #3F3F3F;
+
+/* Others */
+$input-color--light: #1E4785;
+$white-color: #FFFFFF;
+$body-color--light: $white-color;
+$box-shadow--light: 0 0 24px rgb(0 0 0 / 10%);
+$placeholder: #737373;
+$color-red: #D40E14;
+$color-red-alt: #E43C42;
+$border-color--light: #CCCCCC;
+
+/* Scroll bar */
+$scroll-bar-color--light: #E9E9E9;
+$scroll-thumb-color--light: #B9B9B9;
+
+/* Text Dark */
+$title-color--dark: #CDE1F7;
+$text-color--dark: #EDF6FF;
+
+/* Others Dark */
+$input-color--dark: #CDE1F7;
+$body-color--dark: #011333;
+$box-shadow--dark: 0 10px 24px rgb(0 0 0 / 20%);
+$border-color--dark: #CDE1F7;
+
+/* Scroll bar Dark */
+$scroll-bar-color--dark: #CDE1F7;
+$scroll-thumb-color--dark: #7197C9;
+
+/* shortcuts */
+$title-color: 'title-color';
+$text-color: 'text-color';
+$input-color: 'input-color';
+$body-color: 'body-color';
+$scroll-bar-color: 'scroll-bar-color';
+$scroll-thumb-color: 'scroll-thumb-color';
+$box-shadow: 'box-shadow';
+$border-color: 'border-color';
+
+/* themes */
+$themes: (
+	light: (
+		title-color: $title-color--light,
+		text-color: $text-color--light,
+		input-color: $input-color--light,
+		body-color: $body-color--light,
+		scroll-bar-color: $scroll-bar-color--light,
+		scroll-thumb-color: $scroll-thumb-color--light,
+		box-shadow: $box-shadow--light,
+		border-color: $border-color--light
+	),
+	dark: (
+		title-color: $title-color--dark,
+		text-color: $text-color--dark,
+		input-color: $input-color--dark,
+		body-color: $body-color--dark,
+		scroll-bar-color: $scroll-bar-color--dark,
+		scroll-thumb-color: $scroll-thumb-color--dark,
+		box-shadow: $box-shadow--dark,
+		border-color: $border-color--dark
+	),
+);
+
+/* mixin theme */
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}

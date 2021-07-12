@@ -1,0 +1,33 @@
+
+.nav__link {
+	font-weight: $font-weight-semi-bold;
+	text-transform: uppercase;
+
+	@include themed() {
+		color: t($text-color);
+	}
+}
+
+.nav__link:hover {
+	@include themed() {
+		color: t($text-color);
+	}
+}
+
+/* Medium Screens */
+@media screen and (min-width: 768px) {
+	.nav__link {
+		color: $white-color;
+		text-transform: initial;
+	}
+
+	.nav__link:hover {
+		color: $white-color;
+	}
+
+	.scroll-header .nav__link {
+		@include themed() {
+			color: t($text-color);
+		}
+	}
+}
