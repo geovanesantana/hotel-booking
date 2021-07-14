@@ -33,7 +33,7 @@ export default {
 	},
 
 	async asyncData({ $axios, params }) {
-		const getHotel = await $axios.$get(`${process.env.AMADEUS_API_URL}/by-hotel?hotelId=${params.slug}`)
+		const getHotel = await $axios.$get(`https://test.api.amadeus.com/v2/shopping/hotel-offers/by-hotel?hotelId=${params.slug}`)
 			.then(response => {
 				return response.data
 			})
