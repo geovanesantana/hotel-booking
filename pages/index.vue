@@ -15,7 +15,7 @@ export default {
 
 	async asyncData({ $axios }) {
 		const [brazil, italy, portugal, spain] = await Promise.all([
-			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=GRU&radius=300`).then(response => { return response.data }),
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=BSB&radius=300`).then(response => { return response.data }),
 			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=MIL&radius=300`).then(response => { return response.data }),
 			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=OPO&radius=300`).then(response => { return response.data }),
 			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=MAD&radius=300`).then(response => { return response.data })
