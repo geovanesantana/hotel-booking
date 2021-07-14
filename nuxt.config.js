@@ -38,6 +38,10 @@ export default {
 	plugins: [
 	],
 
+	generate: {
+    fallback: true
+  },
+
 	/**
 	 * Build Modules
 	*/
@@ -55,23 +59,6 @@ export default {
 		'@nuxtjs/axios',
 		['cookie-universal-nuxt', { alias: 'cookies' }],
 	],
-
- 	/**
-	 * Axios module configuration: https://go.nuxtjs.dev/config-axios
-	*/
-	// axios: {
-  //   // baseURL: process.env.BASE_URL,
-  //   headers: {
-  //     Authorization: `Bearer ${store.state.access_token}`,
-  //   },
-  // },
-
-	/**
-	 * Middlewares
-	*/
-	// serverMiddleware: [
-	// 	{ path: "/amadeus", handler: "~/serverMiddleware/amadeus.js" },
-	// ],
 
 	/**
 	 * Auto import components

@@ -1,6 +1,6 @@
-
 const axios = require('axios');
 const qs = require('qs');
+import Cookies from 'js-cookie'
 
 export const state = () => ({
   access_token: '',
@@ -13,7 +13,7 @@ export const mutations = {
 }
 
 export const actions = {
-  async nuxtServerInit ({ commit }, { $axios }) {
+  async nuxtServerInit ({ commit }, { $axios, app }) {
 		const data = qs.stringify({
 			client_id: process.env.AMADEUS_API_KEY,
 			client_secret: process.env.AMADEUS_API_SECRET,
@@ -38,8 +38,6 @@ export const actions = {
 			});
 
 		commit('SET_ACCESS_TOKEN', getAccessToken)
-		this.$cookies.set('access_token', getAccessToken)
-
 		$axios.setToken(getAccessToken, 'Bearer')
   },
 }
