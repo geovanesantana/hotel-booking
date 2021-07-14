@@ -3,11 +3,6 @@ export default {
 	ssr: true,
 	target: 'server',
 
-	env: {
-    baseUrl: process.env.BASE_URL,
-    Authorization: process.env.AUTHORIZATION,
-  },
-
 	/**
 	 * Headers of the page
 	 */
@@ -65,18 +60,18 @@ export default {
 	 * Axios module configuration: https://go.nuxtjs.dev/config-axios
 	*/
 	// axios: {
-  //   baseURL: process.env.BASE_URL,
+  //   // baseURL: process.env.BASE_URL,
   //   headers: {
-  //     Authorization: `Bearer ${process.env.AUTHORIZATION}`,
+  //     Authorization: `Bearer ${store.state.access_token}`,
   //   },
   // },
 
 	/**
 	 * Middlewares
 	*/
-	serverMiddleware: [
-		{ path: "/amadeus", handler: "~/serverMiddleware/amadeus.js" },
-	],
+	// serverMiddleware: [
+	// 	{ path: "/amadeus", handler: "~/serverMiddleware/amadeus.js" },
+	// ],
 
 	/**
 	 * Auto import components

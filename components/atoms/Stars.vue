@@ -1,9 +1,6 @@
 <template>
   <div class="stars">
-    <StarsIcon
-      v-for="(star, i) in starsList"
-      :key="i"
-    />
+    <StarsIcon v-for="(star, i) in getStarsInNumber" :key="i" />
   </div>
 </template>
 
@@ -19,10 +16,16 @@ export default {
 
   props: {
     starsList: {
-      type: Number,
-      default: 0,
+      type: String,
+      default: '0',
     },
-  }
+  },
+
+	computed: {
+		getStarsInNumber() {
+			return parseInt(this.starsList)
+		}
+	}
 }
 </script>
 

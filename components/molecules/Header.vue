@@ -9,7 +9,7 @@
 			<div class="nav__menu" :class="{ 'show-menu': showMenu }" id="nav__menu">
 				<ul class="nav__list">
 					<NavItem @click.native="toggleMenu" link="/">Home</NavItem>
-					<NavItem @click.native="toggleMenu" link="#hotels">Hotels</NavItem>
+					<NavItem @click.native="toggleMenu" link="/#hotels">Hotels</NavItem>
 					<NavItem @click.native="toggleMenu" link="#discover">Discover</NavItem>
 				</ul>
 
@@ -51,7 +51,6 @@ export default defineComponent({
 		const { showMenu, toggleMenu } = useShowMenu()
 		const { hasScrolled } = useHandleScroll(30)
 
-		/* Dark Mode */
 		const isDark = useDark({
 			selector: 'html',
 			valueDark: 'theme--light',

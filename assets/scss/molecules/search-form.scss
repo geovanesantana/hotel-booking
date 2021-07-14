@@ -51,6 +51,13 @@
 				background-position: 10px;
 				background-size: 26px;
 			}
+
+			&--price {
+				background-image: url('~assets/img/svg/icon-controls.svg');
+				background-repeat: no-repeat;
+				background-position: 10px;
+				background-size: 26px;
+			}
 		}
 
 		.search-input {
@@ -84,7 +91,7 @@
 		}
 
 		&__form {
-			grid-template-columns: 3fr 3fr 1fr;
+			grid-template-columns: 3fr 2fr 2fr;
 		}
 	}
 }

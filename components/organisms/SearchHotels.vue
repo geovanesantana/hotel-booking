@@ -8,24 +8,25 @@
 				<form class="search__form">
 					<input
 						class="search-input"
-						placeholder="Search by hotel name"
+						placeholder="Search by hotel name:"
 						type="text"
 						v-model="nameHotel">
 
 					<select v-model="location" class="select select--location ">
-						<option v-for="(option, i) in locations" :key="i" :value="option.value">
+						<option v-for="(option, i) in locationOptions" :key="i" :value="option.value">
 							{{ option.text }}
 						</option>
 					</select>
 
-					<div>
-						<label for="vol">Price: ${{ range | formatMoney }}</label><br>
-						<input type="range" v-model="range" min="0" max="1000" step="50"/>
-					</div>
+					<select v-model="sort" class="select select--price ">
+						<option v-for="(option, i) in sortOptions" :key="i" :value="option.value">
+							{{ option.text }}
+						</option>
+					</select>
 				</form>
 			</div>
 
-			<CardsBooking :cards="filteredHotels"/>
+			<CardsBooking :cards="filteredHotels" />
 
 			<div v-if="filteredHotels.length === 0">
 				<h3>No hotels found</h3>
@@ -66,13 +67,18 @@ export default {
 		return {
 			nameHotel: '',
 			location: '',
-			range: 1000,
-			locations: [
+			sort: '',
+			locationOptions: [
 				{ text: 'Select a location:', value: ''},
-			  { text: 'Brazil', value: 'brazil' },
-        { text: 'Italy', value: 'italy' },
-        { text: 'Portugal', value: 'portugal' },
-        { text: 'Spain', value: 'spain' },
+			  { text: 'Brazil', value: 'BR' },
+        { text: 'Italy', value: 'IT' },
+        { text: 'Portugal', value: 'PT' },
+        { text: 'Spain', value: 'ES' },
+			],
+			sortOptions: [
+				{ text: 'Sort by', value: ''},
+			  { text: 'Price: Low to High', value: 'low' },
+        { text: 'Price: High to Low', value: 'high' },
 			]
 		}
 	},
@@ -80,19 +86,18 @@ export default {
 	computed: {
 		filteredHotels() {
 			return this.hotelList.filter(hotel => {
-				const searchNameHotel = hotel.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(this.nameHotel.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
-				const searchLocationHoel =  hotel.location.toLowerCase().includes(this.location.toLowerCase());
-				const searchPriceHotel = hotel.price > 0 && hotel.price < this.range ? hotel.price : ''
+				const sortByhNameHotel = hotel.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(this.nameHotel.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''));
+				const sortByhLocationHoel =  hotel.country.toLowerCase().includes(this.location.toLowerCase());
+				const sortByPrice =  this.sort === 'low' ? this.hotelList.sort((a, b) => a > b ? 1: -1) : this.hotelList.sort((a, b) => a < b ? 1: -1)
 
-				return searchNameHotel && searchLocationHoel && searchPriceHotel
+				return sortByhNameHotel && sortByhLocationHoel && sortByPrice
 			})
 		}
-	},
+	}
 }
 </script>
 
-<style lang="scss">
-
+<style>
 </style>
 
 

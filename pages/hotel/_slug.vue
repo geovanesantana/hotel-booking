@@ -1,10 +1,46 @@
 <template>
+	<section class="section">
+		<div class="container hotel">
+			<div class="hotel__wrapper">
+				<div class="hotel__banner" v-for="(img, i) in getHotel.hotel.media" :key="i">
+					<img :src="img.uri" :alt="getHotel.name" />
+				</div>
+
+				<div class="hotel__detail">
+					<h2 class="hotel__detail-name">{{getHotel.hotel.name}} 	<Stars :stars-list="getHotel.hotel.rating" /></h2>
+					<p class="hotel__detail-description">{{getHotel.hotel.description.text}}</p>
+					<div class="hotel__detail-amenities">
+						<span v-for="(item, i) in getHotel.hotel.amenities" :key="i">
+							<iconCheck class="hotel__detail-icon" />
+
+							{{item}}
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </template>
 
 <script>
+import iconCheck from '@/assets/img/svg/icon-badge-check.svg?inline'
+import axios from 'axios'
+
 export default {
 	name: 'Hotel',
-  // async asyncData({ $axios }) {},
+
+	components: {
+		iconCheck
+	},
+
+	async asyncData({ $axios, params, app  }) {
+		const getHotel = await $axios.$get(`${process.env.AMADEUS_API_URL}/by-hotel?hotelId=${params.slug}`)
+			.then(response => {
+				return response.data
+			})
+
+		return { getHotel }
+  },
 
 	head() {
     return {
@@ -20,7 +56,7 @@ export default {
         { hid: 'robots', name: 'robots', content: 'noindex, nofollow' },
       ],
       link: [
-        { rel: 'canonical', href: '/' }
+        { rel: 'canonical', href: 'https://hotel-booking-inky.vercel.app/hotel' }
       ]
     }
   }

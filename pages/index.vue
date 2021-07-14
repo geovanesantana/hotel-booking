@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<Banner />
-		<SearchHotels :hotel-list="listHotels"/>
+		<SearchHotels :hotel-list="listAllHotels"/>
 		<DiscoverPlaces :discover-places="listDiscoverPlaces"/>
 		<ScrollUp />
 	</main>
@@ -9,21 +9,45 @@
 
 <script>
 import discoverPlaces from '@/assets/json/discoverPlaces'
-import hotels from '@/assets/json/listHotels'
 
 export default {
   name: 'HotelBooking',
 
-	// async asyncData ({ $axios }) {
-  //   let { response } = await $axios.$get('dataURL', {}, { headers: {"Authorization" : `Bearer ${token}`} })
+	async asyncData({ $axios }) {
+		const [brazil, italy, portugal, spain] = await Promise.all([
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=GRU&radius=300`).then(response => { return response.data }),
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=MIL&radius=300`).then(response => { return response.data }),
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=OPO&radius=300`).then(response => { return response.data }),
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=MAD&radius=300`).then(response => { return response.data })
+		])
 
-  //   return { response }
-  // },
+		let getListHotels = [
+			...brazil,
+			...italy,
+			...portugal,
+			...spain
+		]
+
+		let listAllHotels = getListHotels.map(item => {
+			return {
+				slug: item.hotel.hotelId,
+				name: item.hotel.name,
+				label: item.hotel.type,
+				address: `${item.hotel.address.cityName}, ${item.hotel.address.countryCode}`,
+				country: item.hotel.address.countryCode,
+				price: item.offers,
+				stars: item.hotel.rating,
+				image: item.hotel.media
+			}
+		});
+
+		return { listAllHotels }
+  },
 
   data() {
     return {
+			name: 'HotelBooking',
 			listDiscoverPlaces: discoverPlaces,
-			listHotels: hotels
 		};
   },
 
@@ -41,7 +65,7 @@ export default {
         { hid: 'robots', name: 'robots', content: 'noindex, nofollow' },
       ],
       link: [
-        { rel: 'canonical', href: '/' }
+        { rel: 'canonical', href: 'https://hotel-booking-inky.vercel.app/' }
       ]
     }
   }
