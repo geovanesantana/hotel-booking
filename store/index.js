@@ -40,6 +40,6 @@ export const actions = {
 		commit('SET_ACCESS_TOKEN', getAccessToken)
 		this.$cookies.set('access_token', getAccessToken)
 
-		$axios.setToken(getAccessToken || this.$cookies.get('access_token'), 'Bearer')
+		$axios.setToken(getAccessToken, 'Bearer')
   },
 }

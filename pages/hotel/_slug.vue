@@ -24,7 +24,6 @@
 
 <script>
 import iconCheck from '@/assets/img/svg/icon-badge-check.svg?inline'
-import axios from 'axios'
 
 export default {
 	name: 'Hotel',
@@ -33,8 +32,8 @@ export default {
 		iconCheck
 	},
 
-	async asyncData({ $axios, params, app  }) {
-		const getHotel = await $axios.$get(`https://test.api.amadeus.com/v2/shopping/hotel-offers/by-hotel?hotelId=${params.slug}`)
+	async asyncData({ $axios, params }) {
+		const getHotel = await $axios.$get(`${process.env.AMADEUS_API_URL}/by-hotel?hotelId=${params.slug}`)
 			.then(response => {
 				return response.data
 			})

@@ -15,11 +15,12 @@ export default {
 
 	async asyncData({ $axios }) {
 		const [brazil, italy, portugal, spain] = await Promise.all([
-			$axios.$get('https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=GRU&radius=300').then(response => { return response.data }),
-			$axios.$get('https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=MIL&radius=300').then(response => { return response.data }),
-			$axios.$get('https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=OPO&radius=300').then(response => { return response.data }),
-			$axios.$get('https://test.api.amadeus.com/v2/shopping/hotel-offers?cityCode=MAD&radius=300').then(response => { return response.data })
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=SAO&radius=300`).then(response => { return response.data }),
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=MIL&radius=300`).then(response => { return response.data }),
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=OPO&radius=300`).then(response => { return response.data }),
+			$axios.$get(`${process.env.AMADEUS_API_URL}?cityCode=MAD&radius=300`).then(response => { return response.data })
 		])
+
 
 		let getListHotels = [
 			...brazil,

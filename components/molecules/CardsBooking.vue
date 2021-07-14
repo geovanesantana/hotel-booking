@@ -3,17 +3,17 @@
 		<ul class="card-booking">
 			<li class="card-booking__wrapper" v-for="(item, i) in cards" :key="i">
 				<div class="card-booking__overlay">
-					<NuxtLink :to="{ name: 'hotel-slug', params: { slug: item.slug } }" >
+					<a :href="`/hotel/${item.slug}`">
 						<div v-for="(img, i) in item.image" :key="i">
 							<img :src="img.uri" :alt="item.name" class="card-booking__image" />
 						</div>
-					</NuxtLink>
+					</a>
 				</div>
 
 				<div class="card-booking__body">
-					<NuxtLink :to="{ name: 'hotel-slug', params: { slug: item.slug } }" >
+					<a :href="`/hotel/${item.slug}`">
 						<h2 class="card-booking__title">{{ item.name }}</h2>
-					</NuxtLink>
+					</a>
 
 					<Stars :stars-list="item.stars" />
 					<Badge :label="item.label" :location="item.address" />
@@ -25,9 +25,9 @@
 								{{ offer.price.total }} /night
 						</p>
 
-						<NuxtLink :to="{ name: 'hotel-slug', params: { slug: item.slug } }" class="button button--impact">
+						<a :href="`/hotel/${item.slug}`" class="button button--impact">
 							Book now
-						</NuxtLink>
+						</a>
 					</div>
 				</div>
 			</li>
